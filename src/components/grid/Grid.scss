@@ -1,0 +1,33 @@
+.grid {
+    margin: 30px;
+    justify-content: center;
+    h2 {
+        color: #000;
+        margin-bottom: 2.5rem !important;
+    }
+    .gridContainer {
+        border: 1px solid #000;
+        border-radius: 60px;
+        .gridDivison {
+            text-align: center;
+            padding: 20px 50px;
+            input {
+                padding: 15px 55px;
+                border: 1px solid #000;
+                border-radius: 60px;
+                margin: 10px;
+            }
+            .row {
+                justify-content: center;
+                .box{
+                    border: 1px solid #000;
+                    color: #000;
+                }
+            }
+            input:focus {
+                outline: none !important;
+            }
+            
+        }
+    }
+}
