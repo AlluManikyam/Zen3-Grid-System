@@ -67,24 +67,20 @@ class Grid extends Component {
               <Inputbox placeholder='Space between boxes' inputOnChange={this.handleBoxSpace}/>
             </div>
             {
-              rows && rows.length > 0 ? rows.length === columns.length ? rows.map((row, index) => {
-                return <Row>
-                  {
-                    columns.map((box, key) => {
-                      if (key === index) {
-                        let columnsCount = parseInt(box, 10)
-                        let arr = []
-                        for (let i = 0; i < columnsCount; i++) {
-                          arr.push(<Box columnsCount={columnsCount} />)
-                        }
-                        return [...arr];
-                      }
-                    })
+              rows && rows.length > 0 ? rows.map((row, index) => {
+                const noofcolumns = parseInt(columns[index])
+                if(noofcolumns) {
+                  const arr = [];
+                  for (let i = 0; i < noofcolumns; i++) {
+                    arr.push(<Box columnsCount={noofcolumns} />)
                   }
-                </Row>
-              }) : null : null
+                  return <Row>{[...arr]}</Row>;
+                }
+                else {
+                    return <p>Please enter number of columns for row {index+1}.</p>
+                }
+              }) : null
             }
-           
           </div>
         </div>
       </div>
